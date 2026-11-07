@@ -33,12 +33,12 @@ class TestSavingsAccount(unittest.TestCase):
 
     def test_regular_interest(self):
         interest = self.account.calculate_interest()
-        self.assertEqual(interest, 1500)
+        self.assertAlmostEqual(interest, 1500 / 365)
 
     def test_senior_interest(self):
         senior = SavingsAccount(102, "Lavanya", "SENIOR", 100000)
         interest = senior.calculate_interest()
-        self.assertEqual(interest, 3500)
+        self.assertAlmostEqual(interest, 3500 / 365)
 
 
 if __name__ == "__main__":
